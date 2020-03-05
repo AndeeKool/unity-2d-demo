@@ -35,7 +35,6 @@ public class EnemyController : MonoBehaviour
 
         if (movingRight)
         {
-            Debug.Log("Moving Right");
             //move right
             transform.Translate(new Vector2(movementSpeed, 0f));
             //Check if reaches the top limit in X.
@@ -47,7 +46,6 @@ public class EnemyController : MonoBehaviour
         }
         else
         {
-            Debug.Log("Moving Left");
             //move left
             transform.Translate(new Vector2(-movementSpeed, 0f));
             //Check if reaches the bottom limit in X.
@@ -65,6 +63,7 @@ public class EnemyController : MonoBehaviour
             //Shoot 3 times.
             for(int i = 0; i <= onFireProjectileCount; i++){
             Instantiate(projectile, transform.position + new Vector3(0f, -2f, 0f), Quaternion.Euler(new Vector3(0, 0, 180)));
+            projectile.GetComponent<Projectile>().damagableTargetTag = "Player";
             i++;
             //projectile.maxYPosition = -100;
             }

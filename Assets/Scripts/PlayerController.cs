@@ -51,6 +51,7 @@ public class PlayerController : MonoBehaviour
             Debug.Log("Pew");
 
             Instantiate(projectile, transform.position + new Vector3(0f, 2f, 0f), transform.rotation);
+            projectile.GetComponent<Projectile>().damagableTargetTag = "Enemy";
             timeSinceLastFire = 0f;
         }
 
