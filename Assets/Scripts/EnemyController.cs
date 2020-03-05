@@ -66,7 +66,7 @@ public class EnemyController : MonoBehaviour
             for(int i = 0; i <= onFireProjectileCount; i++){
             Instantiate(projectile, transform.position + new Vector3(0f, -2f, 0f), Quaternion.Euler(new Vector3(0, 0, 180)));
             i++;
-            projectile.maxYPosition = -100;
+            //projectile.maxYPosition = -100;
             }
             timeSinceLastFire = 0f;
         }
